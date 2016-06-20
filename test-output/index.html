@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-passed">Suite1</span>
+              <span class="suite-name border-failed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite1">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="testing.NextPage" hash-for-method="NextPage">NextPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -99,11 +113,6 @@
                       <a href="#" panel-name="suite-Suite1" class="show-methods passed suite-Suite1"> (show)</a> <!-- show-methods passed suite-Suite1 -->
                     </span>
                     <div class="method-list-content passed suite-Suite1">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="testing.NextPage" hash-for-method="NextPage">NextPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="testing.HmePage" hash-for-method="homePage">homePage</a> <!-- method navigator-link -->
@@ -121,9 +130,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-passed">
+          <div class="suite-Suite1-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testing.NextPage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -132,10 +141,23 @@
                   <a name="NextPage">
                   </a> <!-- NextPage -->
                   <span class="method-name">NextPage</span>
+                  <div class="stack-trace">org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 16:57:40&apos;
+System info: host: &apos;01250WS3115&apos;, ip: &apos;10.8.110.58&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:377)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at testing.NextPage.NextPage(NextPage.java:16)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-passed -->
+          </div> <!-- suite-Suite1-class-failed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -206,18 +228,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'NextPage')
-data.setCell(0, 2, 'testing.NextPage')
-data.setCell(0, 3, 1784);
+data.setCell(0, 1, 'homePage')
+data.setCell(0, 2, 'testing.HmePage')
+data.setCell(0, 3, 704);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'homePage')
-data.setCell(1, 2, 'testing.HmePage')
-data.setCell(1, 3, 118);
+data.setCell(1, 1, 'NextPage')
+data.setCell(1, 2, 'testing.NextPage')
+data.setCell(1, 3, 7);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 711 ms</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -259,21 +281,25 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">homePage</span>
-                <span class="method-start">5833 ms</span>
+                <span class="method-start">5441 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testing.NextPage</div> <!-- chronological-class-name -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">NextPage</span>
-                <span class="method-start">5957 ms</span>
+                <span class="method-start">6150 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testing.HmePage</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">7792 ms</span>
+                <span class="method-start">6210 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

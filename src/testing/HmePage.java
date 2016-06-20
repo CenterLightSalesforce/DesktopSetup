@@ -17,6 +17,16 @@ public class HmePage extends StartUp{
 				
 		String title=driver.getTitle();
 		System.out.println(title);
+		if(title.contains("Google")){
+			System.out.println("Pass");
+		}else{
+			System.out.println("Show Stoper Found Error");
+			driver.quit();
+		}
+		
+		
+		
+		
 		
 	}
 	

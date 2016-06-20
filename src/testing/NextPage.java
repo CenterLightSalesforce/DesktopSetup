@@ -17,8 +17,7 @@ public void NextPage(){
 	String logTitle=driver.getTitle();
 	System.out.println(logTitle);
 	
-}
-
+      }
 
 
 
